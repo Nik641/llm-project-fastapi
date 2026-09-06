@@ -48,6 +48,6 @@ def send_prompt(request: Request, prompt: PromptSchema = Body(embed=True)):
         }
     raise HTTPException(status_code=404, detail='No answer')
 
-@app.get('/', response_class=FileResponse) # <--- ПОМЕНЯЛИ НА '/'
+@app.get('/', response_class=FileResponse)
 def get_frontend():
     return FileResponse("index.html")
